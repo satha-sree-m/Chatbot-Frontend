@@ -1,0 +1,77 @@
+import React from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+
+// Components
+import TaskCounter from "./components/Counter";
+import MultTable from "./components/MulTable";
+import InterestCalculator from "./components/Si";
+import Dice from "./components/DiceRoll";
+import UsernameFormatter from "./components/Formatter";
+import PalindromeCrter from "./components/Pallindrome";
+import ProfileCard from "./components/ProfileCard";
+import Settings from "./components/Objects";
+import TodoApp from "./components/TodoList";
+import CartItems from "./components/CartItems";
+
+// 🔹 Navigation Buttons
+const NavButtons = () => {
+  const navigate = useNavigate();
+  const programs = [
+    { path: "/counter", label: "Counter" },
+    { path: "/table", label: "Multiplication Table" },
+    { path: "/interest", label: "Interest Calculator" },
+    { path: "/dice", label: "Dice Roll" },
+    { path: "/formatter", label: "Username Formatter" },
+    { path: "/palindrome", label: "Palindrome Checker" },
+    { path: "/profile", label: "Profile Card" },
+    { path: "/settings", label: "Settings" },
+    { path: "/todo", label: "Todo List" },
+    { path: "/cart", label: "Shopping Cart" },
+  ];
+
+  return (
+    <div style={{ marginBottom: "20px", textAlign: "center" }}>
+      {programs.map((p) => (
+        <button
+          key={p.path}
+          onClick={() => navigate(p.path)}
+          style={{
+            margin: "5px",
+            padding: "10px 15px",
+            borderRadius: "8px",
+            cursor: "pointer",
+          }}
+        >
+          {p.label}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+function App() {
+  return (
+    <div style={{ textAlign: "center", margin: "20px" }}>
+      <h1>Exercises</h1>
+      <NavButtons />
+
+      <Routes>
+        <Route path="/counter" element={<TaskCounter />} />
+        <Route path="/table" element={<MultTable />} />
+        <Route path="/interest" element={<InterestCalculator />} />
+        <Route path="/dice" element={<Dice />} />
+        <Route path="/formatter" element={<UsernameFormatter />} />
+        <Route path="/palindrome" element={<PalindromeCrter />} />
+        <Route path="/profile" element={<ProfileCard />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/todo" element={<TodoApp />} />
+        <Route path="/cart" element={<CartItems />} />
+
+        
+        <Route path="/" element={<h2>Select an exercise from above</h2>} />
+      </Routes>
+    </div>
+  );
+}
+
+export default App;

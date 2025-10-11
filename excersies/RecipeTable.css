@@ -1,0 +1,57 @@
+.table-container {
+  width: 100%;
+  overflow: visible; 
+  
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #aaa;
+  padding: 8px;
+  white-space: nowrap;
+  text-align: left;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background-color:beige ;
+  text-align: center;
+  color: black;
+  
+}
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;                       
+  margin-bottom: 10px;
+}
+
+.add-button {
+  padding: 12px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+.step label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.step input,
+.step textarea {
+  padding: 6px;
+  font-size: 14px;
+}
